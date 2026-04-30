@@ -72,12 +72,12 @@ $total_pages = ceil($total_products / $limit);
                     <div class="row">
                         <?php
                        
-                        if (isset($_GET['catid']) && isset($_GET['mos'])) {
-                            $cat_id = $_GET['catid'];
-                            $select = "SELECT * FROM products WHERE cat = '$cat_id' ORDER BY views DESC LIMIT $start, $limit";
-                        } elseif (isset($_GET['braid']) && isset($_GET['low'])) {
-                            $bra_id = $_GET['braid'];
-                            $select = "SELECT * FROM products WHERE brand = '$bra_id' ORDER BY price ASC LIMIT $start, $limit";
+                        if ( isset($_GET['mos'])) {
+                            // $cat_id = $_GET['catid'];
+                            $select = "SELECT * FROM products ORDER BY views DESC";
+                        } elseif ( isset($_GET['low'])) {
+                            // $bra_id = $_GET['braid']
+                            $select = "SELECT * FROM products ORDER BY price ASC ";
                         } else {
                             $select = "SELECT * FROM `products` LIMIT $start, $limit";
                         }
